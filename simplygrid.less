@@ -1,0 +1,25 @@
+// Define grid parameters
+@columns:	12;
+@gutters:	30px;
+
+// Create mixin
+// Mixin allows you to make any element a fraction width,
+// for example .col(3/5); will make an element width 60%
+.col(@x;@y;) {
+	width: calc(percentage((@x/@y)) ~"-"@box-spacing*2);
+	float: left;
+	// Creates IE8 fallback, due to lack of calc() support
+	.ie8 & {
+		width: percentage((@x/@y));
+		float: left;
+	}
+}
+
+// Create loop that will create a span class for each col
+.grid-loop (@i) when (@i > 0) {
+	.span-@{i} {
+		.col(@i,@columns);
+	}
+	.grid-loop(@i - 1);
+}
+.grid-loop(@columns);
