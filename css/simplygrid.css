@@ -2,7 +2,8 @@
   box-sizing: border-box;
 }
 .row {
-  margin: 0 -15px 15px 0;
+  margin: 0 -1.5vw 1.5vw 0;
+  margin-bottom: 2%\9;
   clear: both;
   padding: 0;
   overflow: hidden;
@@ -11,8 +12,8 @@
   float: left;
   width: 98%\9;
   margin-right: 2%\9;
-  width: calc(100% - 15px);
-  margin-right: 15px;
+  width: calc(100% - 1.5vw);
+  margin-right: 1.5vw;
 }
 .span12 > *[class^="row"]:last-child {
   margin-bottom: 0;
@@ -21,8 +22,8 @@
   float: left;
   width: 89.66666667%\9;
   margin-right: 2%\9;
-  width: calc(91.66666667% - 15px);
-  margin-right: 15px;
+  width: calc(91.66666667% - 1.5vw);
+  margin-right: 1.5vw;
 }
 .span11 > *[class^="row"]:last-child {
   margin-bottom: 0;
@@ -31,8 +32,8 @@
   float: left;
   width: 81.33333333%\9;
   margin-right: 2%\9;
-  width: calc(83.33333333% - 15px);
-  margin-right: 15px;
+  width: calc(83.33333333% - 1.5vw);
+  margin-right: 1.5vw;
 }
 .span10 > *[class^="row"]:last-child {
   margin-bottom: 0;
@@ -41,8 +42,8 @@
   float: left;
   width: 73%\9;
   margin-right: 2%\9;
-  width: calc(75% - 15px);
-  margin-right: 15px;
+  width: calc(75% - 1.5vw);
+  margin-right: 1.5vw;
 }
 .span9 > *[class^="row"]:last-child {
   margin-bottom: 0;
@@ -51,8 +52,8 @@
   float: left;
   width: 64.66666667%\9;
   margin-right: 2%\9;
-  width: calc(66.66666667% - 15px);
-  margin-right: 15px;
+  width: calc(66.66666667% - 1.5vw);
+  margin-right: 1.5vw;
 }
 .span8 > *[class^="row"]:last-child {
   margin-bottom: 0;
@@ -61,8 +62,8 @@
   float: left;
   width: 56.33333333%\9;
   margin-right: 2%\9;
-  width: calc(58.33333333% - 15px);
-  margin-right: 15px;
+  width: calc(58.33333333% - 1.5vw);
+  margin-right: 1.5vw;
 }
 .span7 > *[class^="row"]:last-child {
   margin-bottom: 0;
@@ -71,8 +72,8 @@
   float: left;
   width: 48%\9;
   margin-right: 2%\9;
-  width: calc(50% - 15px);
-  margin-right: 15px;
+  width: calc(50% - 1.5vw);
+  margin-right: 1.5vw;
 }
 .span6 > *[class^="row"]:last-child {
   margin-bottom: 0;
@@ -81,8 +82,8 @@
   float: left;
   width: 39.66666667%\9;
   margin-right: 2%\9;
-  width: calc(41.66666667% - 15px);
-  margin-right: 15px;
+  width: calc(41.66666667% - 1.5vw);
+  margin-right: 1.5vw;
 }
 .span5 > *[class^="row"]:last-child {
   margin-bottom: 0;
@@ -91,8 +92,8 @@
   float: left;
   width: 31.33333333%\9;
   margin-right: 2%\9;
-  width: calc(33.33333333% - 15px);
-  margin-right: 15px;
+  width: calc(33.33333333% - 1.5vw);
+  margin-right: 1.5vw;
 }
 .span4 > *[class^="row"]:last-child {
   margin-bottom: 0;
@@ -101,8 +102,8 @@
   float: left;
   width: 23%\9;
   margin-right: 2%\9;
-  width: calc(25% - 15px);
-  margin-right: 15px;
+  width: calc(25% - 1.5vw);
+  margin-right: 1.5vw;
 }
 .span3 > *[class^="row"]:last-child {
   margin-bottom: 0;
@@ -111,8 +112,8 @@
   float: left;
   width: 14.66666667%\9;
   margin-right: 2%\9;
-  width: calc(16.66666667% - 15px);
-  margin-right: 15px;
+  width: calc(16.66666667% - 1.5vw);
+  margin-right: 1.5vw;
 }
 .span2 > *[class^="row"]:last-child {
   margin-bottom: 0;
@@ -121,8 +122,8 @@
   float: left;
   width: 6.33333333%\9;
   margin-right: 2%\9;
-  width: calc(8.33333333% - 15px);
-  margin-right: 15px;
+  width: calc(8.33333333% - 1.5vw);
+  margin-right: 1.5vw;
 }
 .span1 > *[class^="row"]:last-child {
   margin-bottom: 0;
