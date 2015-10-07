@@ -8,121 +8,121 @@
   overflow: hidden;
 }
 .span12 {
-  width: 98%;
-  width: calc(100% - 15px);
   float: left;
-  margin-right: 15px;
+  width: 98%\9;
   margin-right: 2%\9;
+  width: calc(100% - 15px);
+  margin-right: 15px;
 }
 .span12 > *[class^="row"]:last-child {
   margin-bottom: 0;
 }
 .span11 {
-  width: 89.66666667%;
-  width: calc(91.66666667% - 15px);
   float: left;
-  margin-right: 15px;
+  width: 89.66666667%\9;
   margin-right: 2%\9;
+  width: calc(91.66666667% - 15px);
+  margin-right: 15px;
 }
 .span11 > *[class^="row"]:last-child {
   margin-bottom: 0;
 }
 .span10 {
-  width: 81.33333333%;
-  width: calc(83.33333333% - 15px);
   float: left;
-  margin-right: 15px;
+  width: 81.33333333%\9;
   margin-right: 2%\9;
+  width: calc(83.33333333% - 15px);
+  margin-right: 15px;
 }
 .span10 > *[class^="row"]:last-child {
   margin-bottom: 0;
 }
 .span9 {
-  width: 73%;
-  width: calc(75% - 15px);
   float: left;
-  margin-right: 15px;
+  width: 73%\9;
   margin-right: 2%\9;
+  width: calc(75% - 15px);
+  margin-right: 15px;
 }
 .span9 > *[class^="row"]:last-child {
   margin-bottom: 0;
 }
 .span8 {
-  width: 64.66666667%;
-  width: calc(66.66666667% - 15px);
   float: left;
-  margin-right: 15px;
+  width: 64.66666667%\9;
   margin-right: 2%\9;
+  width: calc(66.66666667% - 15px);
+  margin-right: 15px;
 }
 .span8 > *[class^="row"]:last-child {
   margin-bottom: 0;
 }
 .span7 {
-  width: 56.33333333%;
-  width: calc(58.33333333% - 15px);
   float: left;
-  margin-right: 15px;
+  width: 56.33333333%\9;
   margin-right: 2%\9;
+  width: calc(58.33333333% - 15px);
+  margin-right: 15px;
 }
 .span7 > *[class^="row"]:last-child {
   margin-bottom: 0;
 }
 .span6 {
-  width: 48%;
-  width: calc(50% - 15px);
   float: left;
-  margin-right: 15px;
+  width: 48%\9;
   margin-right: 2%\9;
+  width: calc(50% - 15px);
+  margin-right: 15px;
 }
 .span6 > *[class^="row"]:last-child {
   margin-bottom: 0;
 }
 .span5 {
-  width: 39.66666667%;
-  width: calc(41.66666667% - 15px);
   float: left;
-  margin-right: 15px;
+  width: 39.66666667%\9;
   margin-right: 2%\9;
+  width: calc(41.66666667% - 15px);
+  margin-right: 15px;
 }
 .span5 > *[class^="row"]:last-child {
   margin-bottom: 0;
 }
 .span4 {
-  width: 31.33333333%;
-  width: calc(33.33333333% - 15px);
   float: left;
-  margin-right: 15px;
+  width: 31.33333333%\9;
   margin-right: 2%\9;
+  width: calc(33.33333333% - 15px);
+  margin-right: 15px;
 }
 .span4 > *[class^="row"]:last-child {
   margin-bottom: 0;
 }
 .span3 {
-  width: 23%;
-  width: calc(25% - 15px);
   float: left;
-  margin-right: 15px;
+  width: 23%\9;
   margin-right: 2%\9;
+  width: calc(25% - 15px);
+  margin-right: 15px;
 }
 .span3 > *[class^="row"]:last-child {
   margin-bottom: 0;
 }
 .span2 {
-  width: 14.66666667%;
-  width: calc(16.66666667% - 15px);
   float: left;
-  margin-right: 15px;
+  width: 14.66666667%\9;
   margin-right: 2%\9;
+  width: calc(16.66666667% - 15px);
+  margin-right: 15px;
 }
 .span2 > *[class^="row"]:last-child {
   margin-bottom: 0;
 }
 .span1 {
-  width: 6.33333333%;
-  width: calc(8.33333333% - 15px);
   float: left;
-  margin-right: 15px;
+  width: 6.33333333%\9;
   margin-right: 2%\9;
+  width: calc(8.33333333% - 15px);
+  margin-right: 15px;
 }
 .span1 > *[class^="row"]:last-child {
   margin-bottom: 0;

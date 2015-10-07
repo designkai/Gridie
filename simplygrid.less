@@ -16,15 +16,14 @@
 // Mixin allows you to make any element a fraction width,
 // for example .col(3/5); will make an element width 60%
 .col(@x;@y;) {
-	// Create IE8 fallback, due to lack of calc() support,
-	// just removes 2% of width for gutters
-	width: unit( percentage((@x/@y)) - 2, ~"%" );
-	// Create calc grid for modern browsers
-	width: calc( percentage((@x/@y)) ~"-"@gutters );
 	float: left;
-	margin-right: @gutters;
-	// IE hack to use the extra 2% as a gutter
+	// Create IE7&8 fallback. Due to lack of calc() support
+	// columns use an extra 2% as a gutter
+	width: unit(percentage((@x/@y)) - 2, ~"%\9");
 	margin-right: 2%\9;
+	// Create calc grid for modern browsers
+	width: calc(percentage((@x/@y)) ~"-"@gutters);
+	margin-right: @gutters;
 	// Remove bottom margin from the last nested row, to
 	// keep vertical spacing consistent
     & > *[class^="row"]:last-child {

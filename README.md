@@ -1,5 +1,5 @@
 # SimplyGrid
-Super lightweight CSS grid
+Super lightweight LESS grid built with calc(), with fallback to IE7+.
 
 ## Using the mixin
 
@@ -12,6 +12,8 @@ By using a mixin .col can be called inside specific elements, making the grid fl
 		.col(2,5);
 	}
 
+This allows you to not use column classes in your HTML.
+
 	<div class="row">
 		<div id="main-content">Main content</div>
 		<div id="side-bar">Side bar</div>
@@ -19,4 +21,4 @@ By using a mixin .col can be called inside specific elements, making the grid fl
 
 ## Limitations
 
-Currently you cannot place content or styles straight into a row. To do so you'd need to add your largest span inside the row and style that. The only styling acceptable on row is padding.
+Currently you cannot place content or styles straight into a row. To do so you'd need to add your largest span inside the row. The only styling acceptable on row is padding.
