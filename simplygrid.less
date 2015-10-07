@@ -12,7 +12,7 @@
     overflow: hidden;
     // Create IE7&8 gutters. Only needed if gutter 
     // value is in modern units
-    margin-bottom: 2%\9;
+    margin-bottom: 2%\9 !important;
 }
 
 // Create mixin
@@ -30,8 +30,8 @@
 	width: unit(percentage((@x/@y)) - 2, ~"%\9");
 	// Create IE7 fallback. IE7 has a hard time with
 	// decimal places in percentages
-	*width: unit(floor(percentage((@x/@y)) - 2), ~"%\9");
-	margin-right: 2%\9;
+	*width: unit(floor(percentage((@x/@y)) - 2), ~"%\9 !important");
+	margin-right: 2%\9 !important;
 
 	// Remove bottom margin from the last nested row, to
 	// keep vertical spacing consistent
