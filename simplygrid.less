@@ -7,10 +7,12 @@
 
 .row {
     margin: 0 -@gutters @gutters 0;
-    margin-bottom: 2%\9; // Only needed for modern gutter values
     clear: both;
     padding: 0;
     overflow: hidden;
+    // Create IE7&8 gutters. Only needed if gutter 
+    // value is in modern units
+    margin-bottom: 2%\9;
 }
 
 // Create mixin
@@ -18,6 +20,10 @@
 // for example .col(3/5); will make an element width 60%
 .col(@x;@y;) {
 	float: left;
+
+	// Create calc grid for modern browsers
+	width: calc(percentage((@x/@y)) ~"-"@gutters);
+	margin-right: @gutters;
 
 	// Create IE8 fallback. Due to lack of calc() support
 	// columns use an extra 2% as a gutter
@@ -27,12 +33,8 @@
 	*width: unit(floor(percentage((@x/@y)) - 2), ~"%\9");
 	margin-right: 2%\9;
 
-	// Create calc grid for modern browsers
-	width: calc(percentage((@x/@y)) ~"-"@gutters);
-	margin-right: @gutters;
 	// Remove bottom margin from the last nested row, to
 	// keep vertical spacing consistent
-	
     & > *[class^="row"]:last-child {
     	margin-bottom: 0;
     }
