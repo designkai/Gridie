@@ -1,6 +1,19 @@
 // Define grid parameters
 @columns:	12;
-@gutters:	30px;
+@gutters:	15px;
+
+// Box sizing reset, allows for row padding
+*{box-sizing:border-box;}
+
+.row {
+    max-width: 1024px;
+    margin: auto;
+    clear: both;
+    padding: 0;
+    overflow: hidden;
+    margin-right: -@gutters;
+    margin-bottom: @gutters;
+}
 
 // Create mixin
 // Mixin allows you to make any element a fraction width,
@@ -10,14 +23,21 @@
 	// just removes 2% of width for gutters
 	width: unit( percentage((@x/@y)) - 2, ~"%" );
 	// Create calc grid for modern browsers
-	width: calc( percentage((@x/@y)) ~"-"@gutters*2 );
+	width: calc( percentage((@x/@y)) ~"-"@gutters );
 	float: left;
+	margin-right: @gutters;
+	margin-right: 0\9;
+	// Remove bottom margin from the last nested row, to
+	// keep vertical spacing consistent
+    & > *[class^="row"]:last-child {
+    	margin-bottom: 0;
+    }
 }
 
 // Create loop that iterate through the columns
 .grid-loop (@i) when (@i > 0) {
 	// Rename this to change column class names
-	.span-@{i} {
+	.span@{i} {
 		.col(@i,@columns);
 	}
 	.grid-loop(@i - 1);
