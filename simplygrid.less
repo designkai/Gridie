@@ -6,13 +6,10 @@
 *{box-sizing:border-box;}
 
 .row {
-    max-width: 1024px;
-    margin: auto;
+    margin: 0 -@gutters @gutters 0;
     clear: both;
     padding: 0;
     overflow: hidden;
-    margin-right: -@gutters;
-    margin-bottom: @gutters;
 }
 
 // Create mixin
@@ -26,7 +23,8 @@
 	width: calc( percentage((@x/@y)) ~"-"@gutters );
 	float: left;
 	margin-right: @gutters;
-	margin-right: 0\9;
+	// IE hack to use the extra 2% as a gutter
+	margin-right: 2%\9;
 	// Remove bottom margin from the last nested row, to
 	// keep vertical spacing consistent
     & > *[class^="row"]:last-child {
