@@ -16,7 +16,7 @@
   *width: 98%\9 !important;
   margin-right: 2%\9 !important;
 }
-.span12 > *[class^="row"]:last-child {
+.span12 > *[class*="row"]:last-child {
   margin-bottom: 0;
 }
 .span11 {
@@ -27,7 +27,7 @@
   *width: 89%\9 !important;
   margin-right: 2%\9 !important;
 }
-.span11 > *[class^="row"]:last-child {
+.span11 > *[class*="row"]:last-child {
   margin-bottom: 0;
 }
 .span10 {
@@ -38,7 +38,7 @@
   *width: 81%\9 !important;
   margin-right: 2%\9 !important;
 }
-.span10 > *[class^="row"]:last-child {
+.span10 > *[class*="row"]:last-child {
   margin-bottom: 0;
 }
 .span9 {
@@ -49,7 +49,7 @@
   *width: 73%\9 !important;
   margin-right: 2%\9 !important;
 }
-.span9 > *[class^="row"]:last-child {
+.span9 > *[class*="row"]:last-child {
   margin-bottom: 0;
 }
 .span8 {
@@ -60,7 +60,7 @@
   *width: 64%\9 !important;
   margin-right: 2%\9 !important;
 }
-.span8 > *[class^="row"]:last-child {
+.span8 > *[class*="row"]:last-child {
   margin-bottom: 0;
 }
 .span7 {
@@ -71,7 +71,7 @@
   *width: 56%\9 !important;
   margin-right: 2%\9 !important;
 }
-.span7 > *[class^="row"]:last-child {
+.span7 > *[class*="row"]:last-child {
   margin-bottom: 0;
 }
 .span6 {
@@ -82,7 +82,7 @@
   *width: 48%\9 !important;
   margin-right: 2%\9 !important;
 }
-.span6 > *[class^="row"]:last-child {
+.span6 > *[class*="row"]:last-child {
   margin-bottom: 0;
 }
 .span5 {
@@ -93,7 +93,7 @@
   *width: 39%\9 !important;
   margin-right: 2%\9 !important;
 }
-.span5 > *[class^="row"]:last-child {
+.span5 > *[class*="row"]:last-child {
   margin-bottom: 0;
 }
 .span4 {
@@ -104,7 +104,7 @@
   *width: 31%\9 !important;
   margin-right: 2%\9 !important;
 }
-.span4 > *[class^="row"]:last-child {
+.span4 > *[class*="row"]:last-child {
   margin-bottom: 0;
 }
 .span3 {
@@ -115,7 +115,7 @@
   *width: 23%\9 !important;
   margin-right: 2%\9 !important;
 }
-.span3 > *[class^="row"]:last-child {
+.span3 > *[class*="row"]:last-child {
   margin-bottom: 0;
 }
 .span2 {
@@ -126,7 +126,7 @@
   *width: 14%\9 !important;
   margin-right: 2%\9 !important;
 }
-.span2 > *[class^="row"]:last-child {
+.span2 > *[class*="row"]:last-child {
   margin-bottom: 0;
 }
 .span1 {
@@ -137,6 +137,6 @@
   *width: 6%\9 !important;
   margin-right: 2%\9 !important;
 }
-.span1 > *[class^="row"]:last-child {
+.span1 > *[class*="row"]:last-child {
   margin-bottom: 0;
 }
