@@ -18,6 +18,7 @@
     // Create IE7&8 gutters. Only needed if gutter 
     // value is in modern units.
     margin-bottom: 2%\9 !important;
+    margin-right: -@gutters;
 }
 
 // Create mixin.
@@ -27,15 +28,12 @@
 	float: left;
     width: calc(100% ~"-"@gutters);
     margin: 0 @gutters @gutters 0;
-    & *[class*="row"] {
-    	margin-right: -@gutters;
-	    &:last-child *[class*="span"] {
-	    	margin-bottom: @gutters;
-	    	&:last-child {
-		        //background-color: red;
-		        //margin-bottom: 0;
-		    }
-		}
+    & *[class*="row"]:last-child *[class*="span"] {
+    	margin-bottom: @gutters;
+    	&:last-child {
+	        //background-color: red;
+	        //margin-bottom: 0;
+	    }
     }
 	@media (min-width:@z){
 		// Create calc grid for modern browsers.
