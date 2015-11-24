@@ -14,8 +14,8 @@
   width: calc(100% - 1.5vw);
   margin: 0 1.5vw 1.5vw 0;
 }
-.span12 *[class*="row"]:last-child *[class*="span"] {
-  margin-bottom: 1.5vw;
+.span12 *[class*="row"]:last-child *[class*="span"]:last-child {
+  margin-bottom: 0;
 }
 @media (min-width: 740px) {
   .span12 {
@@ -23,9 +23,6 @@
     width: 98%\9;
     *width: 98%\9 !important;
     margin-right: 2%\9 !important;
-  }
-  .span12 > *[class*="row"]:last-child {
-    margin-bottom: 0;
   }
   .span12 > *[class*="row"]:last-child *[class*="span"] {
     margin-bottom: 0;
@@ -36,8 +33,8 @@
   width: calc(100% - 1.5vw);
   margin: 0 1.5vw 1.5vw 0;
 }
-.span11 *[class*="row"]:last-child *[class*="span"] {
-  margin-bottom: 1.5vw;
+.span11 *[class*="row"]:last-child *[class*="span"]:last-child {
+  margin-bottom: 0;
 }
 @media (min-width: 740px) {
   .span11 {
@@ -45,9 +42,6 @@
     width: 89.66666667%\9;
     *width: 89%\9 !important;
     margin-right: 2%\9 !important;
-  }
-  .span11 > *[class*="row"]:last-child {
-    margin-bottom: 0;
   }
   .span11 > *[class*="row"]:last-child *[class*="span"] {
     margin-bottom: 0;
@@ -58,8 +52,8 @@
   width: calc(100% - 1.5vw);
   margin: 0 1.5vw 1.5vw 0;
 }
-.span10 *[class*="row"]:last-child *[class*="span"] {
-  margin-bottom: 1.5vw;
+.span10 *[class*="row"]:last-child *[class*="span"]:last-child {
+  margin-bottom: 0;
 }
 @media (min-width: 740px) {
   .span10 {
@@ -67,9 +61,6 @@
     width: 81.33333333%\9;
     *width: 81%\9 !important;
     margin-right: 2%\9 !important;
-  }
-  .span10 > *[class*="row"]:last-child {
-    margin-bottom: 0;
   }
   .span10 > *[class*="row"]:last-child *[class*="span"] {
     margin-bottom: 0;
@@ -80,8 +71,8 @@
   width: calc(100% - 1.5vw);
   margin: 0 1.5vw 1.5vw 0;
 }
-.span9 *[class*="row"]:last-child *[class*="span"] {
-  margin-bottom: 1.5vw;
+.span9 *[class*="row"]:last-child *[class*="span"]:last-child {
+  margin-bottom: 0;
 }
 @media (min-width: 740px) {
   .span9 {
@@ -89,9 +80,6 @@
     width: 73%\9;
     *width: 73%\9 !important;
     margin-right: 2%\9 !important;
-  }
-  .span9 > *[class*="row"]:last-child {
-    margin-bottom: 0;
   }
   .span9 > *[class*="row"]:last-child *[class*="span"] {
     margin-bottom: 0;
@@ -102,8 +90,8 @@
   width: calc(100% - 1.5vw);
   margin: 0 1.5vw 1.5vw 0;
 }
-.span8 *[class*="row"]:last-child *[class*="span"] {
-  margin-bottom: 1.5vw;
+.span8 *[class*="row"]:last-child *[class*="span"]:last-child {
+  margin-bottom: 0;
 }
 @media (min-width: 740px) {
   .span8 {
@@ -111,9 +99,6 @@
     width: 64.66666667%\9;
     *width: 64%\9 !important;
     margin-right: 2%\9 !important;
-  }
-  .span8 > *[class*="row"]:last-child {
-    margin-bottom: 0;
   }
   .span8 > *[class*="row"]:last-child *[class*="span"] {
     margin-bottom: 0;
@@ -124,8 +109,8 @@
   width: calc(100% - 1.5vw);
   margin: 0 1.5vw 1.5vw 0;
 }
-.span7 *[class*="row"]:last-child *[class*="span"] {
-  margin-bottom: 1.5vw;
+.span7 *[class*="row"]:last-child *[class*="span"]:last-child {
+  margin-bottom: 0;
 }
 @media (min-width: 740px) {
   .span7 {
@@ -133,9 +118,6 @@
     width: 56.33333333%\9;
     *width: 56%\9 !important;
     margin-right: 2%\9 !important;
-  }
-  .span7 > *[class*="row"]:last-child {
-    margin-bottom: 0;
   }
   .span7 > *[class*="row"]:last-child *[class*="span"] {
     margin-bottom: 0;
@@ -146,8 +128,8 @@
   width: calc(100% - 1.5vw);
   margin: 0 1.5vw 1.5vw 0;
 }
-.span6 *[class*="row"]:last-child *[class*="span"] {
-  margin-bottom: 1.5vw;
+.span6 *[class*="row"]:last-child *[class*="span"]:last-child {
+  margin-bottom: 0;
 }
 @media (min-width: 740px) {
   .span6 {
@@ -155,9 +137,6 @@
     width: 48%\9;
     *width: 48%\9 !important;
     margin-right: 2%\9 !important;
-  }
-  .span6 > *[class*="row"]:last-child {
-    margin-bottom: 0;
   }
   .span6 > *[class*="row"]:last-child *[class*="span"] {
     margin-bottom: 0;
@@ -168,8 +147,8 @@
   width: calc(100% - 1.5vw);
   margin: 0 1.5vw 1.5vw 0;
 }
-.span5 *[class*="row"]:last-child *[class*="span"] {
-  margin-bottom: 1.5vw;
+.span5 *[class*="row"]:last-child *[class*="span"]:last-child {
+  margin-bottom: 0;
 }
 @media (min-width: 740px) {
   .span5 {
@@ -177,9 +156,6 @@
     width: 39.66666667%\9;
     *width: 39%\9 !important;
     margin-right: 2%\9 !important;
-  }
-  .span5 > *[class*="row"]:last-child {
-    margin-bottom: 0;
   }
   .span5 > *[class*="row"]:last-child *[class*="span"] {
     margin-bottom: 0;
@@ -190,8 +166,8 @@
   width: calc(100% - 1.5vw);
   margin: 0 1.5vw 1.5vw 0;
 }
-.span4 *[class*="row"]:last-child *[class*="span"] {
-  margin-bottom: 1.5vw;
+.span4 *[class*="row"]:last-child *[class*="span"]:last-child {
+  margin-bottom: 0;
 }
 @media (min-width: 740px) {
   .span4 {
@@ -199,9 +175,6 @@
     width: 31.33333333%\9;
     *width: 31%\9 !important;
     margin-right: 2%\9 !important;
-  }
-  .span4 > *[class*="row"]:last-child {
-    margin-bottom: 0;
   }
   .span4 > *[class*="row"]:last-child *[class*="span"] {
     margin-bottom: 0;
@@ -212,8 +185,8 @@
   width: calc(100% - 1.5vw);
   margin: 0 1.5vw 1.5vw 0;
 }
-.span3 *[class*="row"]:last-child *[class*="span"] {
-  margin-bottom: 1.5vw;
+.span3 *[class*="row"]:last-child *[class*="span"]:last-child {
+  margin-bottom: 0;
 }
 @media (min-width: 740px) {
   .span3 {
@@ -221,9 +194,6 @@
     width: 23%\9;
     *width: 23%\9 !important;
     margin-right: 2%\9 !important;
-  }
-  .span3 > *[class*="row"]:last-child {
-    margin-bottom: 0;
   }
   .span3 > *[class*="row"]:last-child *[class*="span"] {
     margin-bottom: 0;
@@ -234,8 +204,8 @@
   width: calc(100% - 1.5vw);
   margin: 0 1.5vw 1.5vw 0;
 }
-.span2 *[class*="row"]:last-child *[class*="span"] {
-  margin-bottom: 1.5vw;
+.span2 *[class*="row"]:last-child *[class*="span"]:last-child {
+  margin-bottom: 0;
 }
 @media (min-width: 740px) {
   .span2 {
@@ -243,9 +213,6 @@
     width: 14.66666667%\9;
     *width: 14%\9 !important;
     margin-right: 2%\9 !important;
-  }
-  .span2 > *[class*="row"]:last-child {
-    margin-bottom: 0;
   }
   .span2 > *[class*="row"]:last-child *[class*="span"] {
     margin-bottom: 0;
@@ -256,8 +223,8 @@
   width: calc(100% - 1.5vw);
   margin: 0 1.5vw 1.5vw 0;
 }
-.span1 *[class*="row"]:last-child *[class*="span"] {
-  margin-bottom: 1.5vw;
+.span1 *[class*="row"]:last-child *[class*="span"]:last-child {
+  margin-bottom: 0;
 }
 @media (min-width: 740px) {
   .span1 {
@@ -265,9 +232,6 @@
     width: 6.33333333%\9;
     *width: 6%\9 !important;
     margin-right: 2%\9 !important;
-  }
-  .span1 > *[class*="row"]:last-child {
-    margin-bottom: 0;
   }
   .span1 > *[class*="row"]:last-child *[class*="span"] {
     margin-bottom: 0;

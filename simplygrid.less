@@ -11,30 +11,28 @@
 }
 
 .row {
-    margin: 0;
-    clear: both;
-    padding: 0;
-    overflow: hidden;
-    // Create IE7&8 gutters. Only needed if gutter 
-    // value is in modern units.
-    margin-bottom: 2%\9 !important;
-    margin-right: -@gutters;
+	margin: 0;
+	clear: both;
+	padding: 0;
+	overflow: hidden;
+	// Create IE7&8 gutters. Only needed if gutter 
+	// value is in modern units.
+	margin-bottom: 2%\9 !important;
+	margin-right: -@gutters;
 }
 
 // Create mixin.
 // Mixin allows you to make any element a fraction width,
 // for example .col(3/5); will make an element width 60%.
-.col(@x;@y;@z:@md;) {
+.col(@x;@y;@z:0px;) {
 	float: left;
-    width: calc(100% ~"-"@gutters);
-    margin: 0 @gutters @gutters 0;
-    & *[class*="row"]:last-child *[class*="span"] {
-    	margin-bottom: @gutters;
-    	&:last-child {
-	        //background-color: red;
-	        //margin-bottom: 0;
-	    }
-    }
+	width: calc(100% ~"-"@gutters);
+	margin: 0 @gutters @gutters 0;
+	// Remove bottom margin from the last span in the last
+	// nested row, to keep vertical spacing consistent.
+	& *[class*="row"]:last-child *[class*="span"]:last-child {
+		margin-bottom: 0;
+	}
 	@media (min-width:@z){
 		// Create calc grid for modern browsers.
 		width: calc(percentage((@x/@y)) ~"-"@gutters);
@@ -49,14 +47,11 @@
 		*width: unit(floor(percentage((@x/@y)) - 2), ~"%\9 !important");
 		margin-right: 2%\9 !important;
 
-		// Remove bottom margin from the last nested row, to
-		// keep vertical spacing consistent.
-	    & > *[class*="row"]:last-child {
-	    	margin-bottom: 0;
-		    & *[class*="span"] {
-		        margin-bottom: 0;
-		    }
-	    }
+		// Remove bottom margin from all spans in the last nested
+		// row, to keep vertical spacing consistent.
+		& > *[class*="row"]:last-child *[class*="span"] {
+			margin-bottom: 0;
+		}
 	}
 }
 
@@ -65,7 +60,7 @@
 .grid-loop (@i) when (@i > 0) {
 	// Rename this to change column class names.
 	.span@{i} {
-		.col(@i,@columns);
+		.col(@i,@columns,@md);
 	}
 	.grid-loop(@i - 1);
 }
