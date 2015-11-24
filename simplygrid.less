@@ -1,6 +1,9 @@
 // Define grid parameters
 @columns:	12;
 @gutters:	1.5vw;
+@sm:		320px;
+@md:		740px;
+@lg:		960px;
 
 // Box sizing reset, allows for row padding
 * {
@@ -8,7 +11,7 @@
 }
 
 .row {
-    margin: 0 -@gutters @gutters 0;
+    margin: 0;
     clear: both;
     padding: 0;
     overflow: hidden;
@@ -20,28 +23,43 @@
 // Create mixin.
 // Mixin allows you to make any element a fraction width,
 // for example .col(3/5); will make an element width 60%.
-.col(@x;@y;) {
+.col(@x;@y;@z:@md;) {
 	float: left;
-
-	// Create calc grid for modern browsers.
-	width: calc(percentage((@x/@y)) ~"-"@gutters);
-	margin-right: @gutters;
-
-	// Create IE8- fallback. Due to lack of calc() support
-	// columns use an extra 2% as a gutter.
-	// Remove this if only supporting IE9+.
-	width: unit(percentage((@x/@y)) - 2, ~"%\9");
-	// Create IE7 fallback. IE7 has a hard time with
-	// decimal places in percentages.
-	// Remove this if only supporting IE9+.
-	*width: unit(floor(percentage((@x/@y)) - 2), ~"%\9 !important");
-	margin-right: 2%\9 !important;
-
-	// Remove bottom margin from the last nested row, to
-	// keep vertical spacing consistent.
-    & > *[class*="row"]:last-child {
-    	margin-bottom: 0;
+    width: calc(100% ~"-"@gutters);
+    margin: 0 @gutters @gutters 0;
+    & *[class*="row"] {
+    	margin-right: -@gutters;
+	    &:last-child *[class*="span"] {
+	    	margin-bottom: @gutters;
+	    	&:last-child {
+		        //background-color: red;
+		        //margin-bottom: 0;
+		    }
+		}
     }
+	@media (min-width:@z){
+		// Create calc grid for modern browsers.
+		width: calc(percentage((@x/@y)) ~"-"@gutters);
+
+		// Create IE8- fallback. Due to lack of calc() support
+		// columns use an extra 2% as a gutter.
+		// Remove this if only supporting IE9+.
+		width: unit(percentage((@x/@y)) - 2, ~"%\9");
+		// Create IE7 fallback. IE7 has a hard time with
+		// decimal places in percentages.
+		// Remove this if only supporting IE9+.
+		*width: unit(floor(percentage((@x/@y)) - 2), ~"%\9 !important");
+		margin-right: 2%\9 !important;
+
+		// Remove bottom margin from the last nested row, to
+		// keep vertical spacing consistent.
+	    & > *[class*="row"]:last-child {
+	    	margin-bottom: 0;
+		    & *[class*="span"] {
+		        margin-bottom: 0;
+		    }
+	    }
+	}
 }
 
 // Create loop that iterate through the columns. This
