@@ -1,9 +1,6 @@
 // Define grid parameters
 @columns:	12;
 @gutters:	1.5vw;
-@sm:		320px;
-@md:		740px;
-@lg:		960px;
 
 // Box sizing reset, allows for row padding
 * {
@@ -74,7 +71,7 @@
 .grid-loop (@i) when (@i > 0) {
 	// Rename this to change column class names.
 	.span@{i} {
-		.col(@i,@columns,@md);
+		.col(@i,@columns,50em);
 	}
 	.grid-loop(@i - 1);
 }

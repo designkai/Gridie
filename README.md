@@ -3,7 +3,7 @@ Super lightweight LESS grid built with calc(), with fallback to IE7+.
 
 ## Using the mixin
 
-By using a mixin .col can be called inside specific elements, making the grid flexible beyond the pre-defined classes. For example, to create a basic layout you might use it inside an id.
+By using a mixin .col can be called inside specific elements, making the grid flexible beyond the pre-defined classes. For example, to create a basic layout you might use it inside an ID.
 
 	#main-content {
 		.col(3,5);
@@ -30,14 +30,19 @@ This method also allows you to attach grid values directly to elements, without 
 		<img src="cool-image.jpg" style="width:100%;">
 	</div>
 
-Using the mixin, we could turn these 6 images into 6 columns that break down to 3 columns using a media query.
+Using the mixin, we could turn these 6 images into 6 columns.
 
 	.img-list {
 		img {
 			.col(1,3);
-			@media (min-width: 600px) {
-				.col(1,6);
-			}
+		}
+	}
+
+The mixin can also be expanded on to define the breakpoints of an element. For example, if we wanted those 6 images to break into 6 rows at 740px we can add it at the end.
+
+	.img-list {
+		img {
+			.col(1,3,740px);
 		}
 	}
 
