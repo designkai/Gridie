@@ -5,12 +5,14 @@ Super lightweight LESS grid built with calc(), with fallback to IE7+.
 
 By using a mixin .col can be called inside specific elements, making the grid flexible beyond the pre-defined classes. For example, to create a basic layout you might use it inside an ID.
 
-	#main-content {
-		.col(3,5);
-	}
-	#side-bar {
-		.col(2,5);
-	}
+```css
+#main-content {
+	.col(3,5);
+}
+#side-bar {
+	.col(2,5);
+}
+```
 
 This allows you to not use column classes in your HTML.
 
