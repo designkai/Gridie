@@ -24,16 +24,17 @@
 // Create mixin.
 // Mixin allows you to make any element a fraction width,
 // for example .col(3/5); will make an element width 60%.
-.col(@x;@y;@z:0px;) {
+.col(@x;@y;@z:0;) {
 	float: left;
-	width: calc(100% ~"-"@gutters);
 	margin: 0 @gutters @gutters 0;
 	// Remove bottom margin from the last span in the last
 	// nested row, to keep vertical spacing consistent.
 	& *[class*="row"]:last-child *[class*="span"]:last-child {
 		margin-bottom: 0;
 	}
-	@media (min-width:@z){
+	// Create a ruleset out of the grid values so they can
+	// be easily re-used and maintained.
+	@grid-ruleset: {
 		// Create calc grid for modern browsers.
 		width: calc(percentage((@x/@y)) ~"-"@gutters);
 
@@ -51,6 +52,19 @@
 		// row, to keep vertical spacing consistent.
 		& > *[class*="row"]:last-child *[class*="span"] {
 			margin-bottom: 0;
+		}
+	};
+	// When the breakpoint is undefined, simply add the
+	// ruleset without a media query.
+	& when (@z = 0) {
+		@grid-ruleset();
+	}
+	// If the breakpoint is defined, add the ruleset inside
+	// a media query at that size.
+	& when (@z > 0) {
+		width: calc(100% ~"-"@gutters);
+		@media (min-width: @z){
+			@grid-ruleset();
 		}
 	}
 }

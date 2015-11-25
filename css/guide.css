@@ -11,8 +11,8 @@
 }
 .span12 {
   float: left;
-  width: calc(100% - 1.5vw);
   margin: 0 1.5vw 1.5vw 0;
+  width: calc(100% - 1.5vw);
 }
 .span12 *[class*="row"]:last-child *[class*="span"]:last-child {
   margin-bottom: 0;
@@ -30,8 +30,8 @@
 }
 .span11 {
   float: left;
-  width: calc(100% - 1.5vw);
   margin: 0 1.5vw 1.5vw 0;
+  width: calc(100% - 1.5vw);
 }
 .span11 *[class*="row"]:last-child *[class*="span"]:last-child {
   margin-bottom: 0;
@@ -49,8 +49,8 @@
 }
 .span10 {
   float: left;
-  width: calc(100% - 1.5vw);
   margin: 0 1.5vw 1.5vw 0;
+  width: calc(100% - 1.5vw);
 }
 .span10 *[class*="row"]:last-child *[class*="span"]:last-child {
   margin-bottom: 0;
@@ -68,8 +68,8 @@
 }
 .span9 {
   float: left;
-  width: calc(100% - 1.5vw);
   margin: 0 1.5vw 1.5vw 0;
+  width: calc(100% - 1.5vw);
 }
 .span9 *[class*="row"]:last-child *[class*="span"]:last-child {
   margin-bottom: 0;
@@ -87,8 +87,8 @@
 }
 .span8 {
   float: left;
-  width: calc(100% - 1.5vw);
   margin: 0 1.5vw 1.5vw 0;
+  width: calc(100% - 1.5vw);
 }
 .span8 *[class*="row"]:last-child *[class*="span"]:last-child {
   margin-bottom: 0;
@@ -106,8 +106,8 @@
 }
 .span7 {
   float: left;
-  width: calc(100% - 1.5vw);
   margin: 0 1.5vw 1.5vw 0;
+  width: calc(100% - 1.5vw);
 }
 .span7 *[class*="row"]:last-child *[class*="span"]:last-child {
   margin-bottom: 0;
@@ -125,8 +125,8 @@
 }
 .span6 {
   float: left;
-  width: calc(100% - 1.5vw);
   margin: 0 1.5vw 1.5vw 0;
+  width: calc(100% - 1.5vw);
 }
 .span6 *[class*="row"]:last-child *[class*="span"]:last-child {
   margin-bottom: 0;
@@ -144,8 +144,8 @@
 }
 .span5 {
   float: left;
-  width: calc(100% - 1.5vw);
   margin: 0 1.5vw 1.5vw 0;
+  width: calc(100% - 1.5vw);
 }
 .span5 *[class*="row"]:last-child *[class*="span"]:last-child {
   margin-bottom: 0;
@@ -163,8 +163,8 @@
 }
 .span4 {
   float: left;
-  width: calc(100% - 1.5vw);
   margin: 0 1.5vw 1.5vw 0;
+  width: calc(100% - 1.5vw);
 }
 .span4 *[class*="row"]:last-child *[class*="span"]:last-child {
   margin-bottom: 0;
@@ -182,8 +182,8 @@
 }
 .span3 {
   float: left;
-  width: calc(100% - 1.5vw);
   margin: 0 1.5vw 1.5vw 0;
+  width: calc(100% - 1.5vw);
 }
 .span3 *[class*="row"]:last-child *[class*="span"]:last-child {
   margin-bottom: 0;
@@ -201,8 +201,8 @@
 }
 .span2 {
   float: left;
-  width: calc(100% - 1.5vw);
   margin: 0 1.5vw 1.5vw 0;
+  width: calc(100% - 1.5vw);
 }
 .span2 *[class*="row"]:last-child *[class*="span"]:last-child {
   margin-bottom: 0;
@@ -220,8 +220,8 @@
 }
 .span1 {
   float: left;
-  width: calc(100% - 1.5vw);
   margin: 0 1.5vw 1.5vw 0;
+  width: calc(100% - 1.5vw);
 }
 .span1 *[class*="row"]:last-child *[class*="span"]:last-child {
   margin-bottom: 0;
@@ -253,27 +253,22 @@ pre:hover {
 }
 .col7 {
   float: left;
-  width: calc(100% - 1.5vw);
   margin: 0 1.5vw 1.5vw 0;
+  width: calc(14.28571429% - 1.5vw);
+  width: 12.28571429%\9;
+  *width: 12%\9 !important;
+  margin-right: 2%\9 !important;
 }
 .col7 *[class*="row"]:last-child *[class*="span"]:last-child {
   margin-bottom: 0;
 }
-@media (min-width: 320px) {
-  .col7 {
-    width: calc(14.28571429% - 1.5vw);
-    width: 12.28571429%\9;
-    *width: 12%\9 !important;
-    margin-right: 2%\9 !important;
-  }
-  .col7 > *[class*="row"]:last-child *[class*="span"] {
-    margin-bottom: 0;
-  }
+.col7 > *[class*="row"]:last-child *[class*="span"] {
+  margin-bottom: 0;
 }
 .col5 {
   float: left;
-  width: calc(100% - 1.5vw);
   margin: 0 1.5vw 1.5vw 0;
+  width: calc(100% - 1.5vw);
 }
 .col5 *[class*="row"]:last-child *[class*="span"]:last-child {
   margin-bottom: 0;
