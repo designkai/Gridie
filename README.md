@@ -35,7 +35,7 @@ This method also allows you to attach grid values directly to elements, without 
 	<img src="cool-image.jpg" style="width:100%;">
 	<img src="cool-image.jpg" style="width:100%;">
 </div>
-``
+```
 
 Using the mixin, we could turn these 6 images into 6 columns.
 
