@@ -4,19 +4,22 @@ body {
 	margin: 0;
 	padding: 1.5vw;
 }
+
 pre {
 	padding: .5em;
 	margin: 0;
 	line-height: normal;
 	background-color: #EFEFEF;
 	border-radius: 3px;
+	&:hover {
+		background-color: #CCC;
+	}
 }
-pre:hover {
-	background-color: #CCC;
-}
+
 .col7 {
 	.col(1,7);
 }
+
 .col5 {
 	.col(1,5,960px);
 }
