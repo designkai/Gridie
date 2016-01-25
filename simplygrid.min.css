@@ -12,6 +12,7 @@
 *[class*="span"] {
   float: left;
   margin: 0 2vw 2vw 0;
+  width: calc(98%);
 }
 *[class*="span"] *[class*="row"]:last-child *[class*="span"]:last-child,
 *[class*="span"] > *[class*="row"]:last-child *[class*="span"] {
