@@ -25,12 +25,6 @@
 	margin-right: -@gutters;
 }
 
-// Makes sure vertical spacing is always consistent,
-// even after breaking.
-*[class*="@{collabel}"] {
-	margin-bottom: @gutters;
-}
-
 // Create mixin.
 // Mixin allows you to make any element a fraction width,
 // for example .col(3/5); will make an element width 60%.
@@ -39,7 +33,8 @@
 	margin: 0 @gutters @gutters 0;
 	// Remove bottom margin from the last span in the last
 	// nested row, to keep vertical spacing consistent.
-	& *[class*="@{rowlabel}"]:last-child *[class*="@{collabel}"]:last-child {
+	& *[class*="@{rowlabel}"]:last-child *[class*="@{collabel}"]:last-child,
+	& > *[class*="@{rowlabel}"]:last-child *[class*="@{collabel}"] {
 		margin-bottom: 0;
 	}
 	// Create a ruleset out of the grid values so they can
@@ -57,12 +52,6 @@
 		// Remove this if only supporting IE9+.
 		*width: unit(floor(percentage((@x/@y)) - 2), ~"%\9 !important");
 		margin-right: 2%\9 !important;
-
-		// Remove bottom margin from all spans in the last nested
-		// row, to keep vertical spacing consistent.
-		& > *[class*="@{rowlabel}"]:last-child *[class*="@{collabel}"] {
-			margin-bottom: 0;
-		}
 	};
 	// When the breakpoint is undefined, simply add the
 	// ruleset without a media query.
@@ -85,9 +74,7 @@
 	*[class*="@{collabel}"] {
 		float: left;
 		margin: 0 @gutters @gutters 0;
-		& *[class*="@{rowlabel}"]:last-child *[class*="@{collabel}"]:last-child {
-			margin-bottom: 0;
-		}
+		& *[class*="@{rowlabel}"]:last-child *[class*="@{collabel}"]:last-child,
 		& > *[class*="@{rowlabel}"]:last-child *[class*="@{collabel}"] {
 			margin-bottom: 0;
 		}

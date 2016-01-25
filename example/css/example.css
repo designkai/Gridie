@@ -10,15 +10,10 @@
   margin-right: -2vw;
 }
 *[class*="span"] {
-  margin-bottom: 2vw;
-}
-*[class*="span"] {
   float: left;
   margin: 0 2vw 2vw 0;
 }
-*[class*="span"] *[class*="row"]:last-child *[class*="span"]:last-child {
-  margin-bottom: 0;
-}
+*[class*="span"] *[class*="row"]:last-child *[class*="span"]:last-child,
 *[class*="span"] > *[class*="row"]:last-child *[class*="span"] {
   margin-bottom: 0;
 }
@@ -290,9 +285,7 @@ pre:hover {
   *width: 31%\9 !important;
   margin-right: 2%\9 !important;
 }
-.col3 *[class*="row"]:last-child *[class*="span"]:last-child {
-  margin-bottom: 0;
-}
+.col3 *[class*="row"]:last-child *[class*="span"]:last-child,
 .col3 > *[class*="row"]:last-child *[class*="span"] {
   margin-bottom: 0;
 }
@@ -301,7 +294,8 @@ pre:hover {
   margin: 0 2vw 2vw 0;
   width: calc(100% - 2vw);
 }
-.col5 *[class*="row"]:last-child *[class*="span"]:last-child {
+.col5 *[class*="row"]:last-child *[class*="span"]:last-child,
+.col5 > *[class*="row"]:last-child *[class*="span"] {
   margin-bottom: 0;
 }
 @media (min-width: 960px) {
@@ -310,8 +304,5 @@ pre:hover {
     width: 18%\9;
     *width: 18%\9 !important;
     margin-right: 2%\9 !important;
-  }
-  .col5 > *[class*="row"]:last-child *[class*="span"] {
-    margin-bottom: 0;
   }
 }
