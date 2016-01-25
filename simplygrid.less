@@ -1,11 +1,11 @@
-@gutters:   1.5vw;
+@gutters:   	2vw;
 
 // Box sizing reset, allows for row padding
 * {
 	box-sizing: border-box;
 }
 
-.row {
+.@{rowlabel} {
 	margin: 0;
 	clear: both;
 	padding: 0;
@@ -16,6 +16,12 @@
 	margin-right: -@gutters;
 }
 
+// Makes sure vertical spacing is always consistent,
+// even after breaking.
+*[class*="@{collabel}"] {
+	margin-bottom: @gutters;
+}
+
 // Create mixin.
 // Mixin allows you to make any element a fraction width,
 // for example .col(3/5); will make an element width 60%.
@@ -24,7 +30,7 @@
 	margin: 0 @gutters @gutters 0;
 	// Remove bottom margin from the last span in the last
 	// nested row, to keep vertical spacing consistent.
-	& *[class*="row"]:last-child *[class*="span"]:last-child {
+	& *[class*="@{rowlabel}"]:last-child *[class*="@{collabel}"]:last-child {
 		margin-bottom: 0;
 	}
 	// Create a ruleset out of the grid values so they can
@@ -45,7 +51,7 @@
 
 		// Remove bottom margin from all spans in the last nested
 		// row, to keep vertical spacing consistent.
-		& > *[class*="row"]:last-child *[class*="span"] {
+		& > *[class*="@{rowlabel}"]:last-child *[class*="@{collabel}"] {
 			margin-bottom: 0;
 		}
 	};
@@ -61,5 +67,54 @@
 		@media (min-width: @z){
 			@grid-ruleset();
 		}
+	}
+}
+
+// Variables for creating styles
+@columns:   	12;
+@rowlabel:		row;
+@collabel: 		span;
+
+// Mixin for creating classes
+.create-grid(@s;@m;@l;) {
+	// Create loop that iterate through the columns.
+	.grid-loop (@i) when (@i > 0) {
+		.@{collabel}@{i} {
+			.col(@i,@columns);
+		}
+		.grid-loop(@i - 1);
+	}
+	// Create a class for each column.
+	.grid-loop(@columns);
+
+	// Repeat loop for each breakpoint
+	.grid-loop-sm (@i) when (@i > 0) {
+		.@{collabel}@{i}-sm {
+			.col(@i,@columns);
+		}
+		.grid-loop-sm(@i - 1);
+	}
+	@media (min-width: @s) {
+		.grid-loop-sm(@columns);
+	}
+
+	.grid-loop-md (@i) when (@i > 0) {
+		.@{collabel}@{i}-md {
+			.col(@i,@columns);
+		}
+		.grid-loop-md(@i - 1);
+	}
+	@media (min-width: @m) {
+		.grid-loop-md(@columns);
+	}
+
+	.grid-loop-lg (@i) when (@i > 0) {
+		.@{collabel}@{i}-lg {
+			.col(@i,@columns);
+		}
+		.grid-loop-lg(@i - 1);
+	}
+	@media (min-width: @l) {
+		.grid-loop-lg(@columns);
 	}
 }
