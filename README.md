@@ -62,7 +62,7 @@ If you'd like to create a stylesheet like normal that uses classes, this can be 
 
 This will output the styles for a grid based on the variables at the top of the doc.
 
-```css
+```
 @columns: 12;
 @rowclass: row; // Sets the class used for rows
 @colclass: span; // Sets the class used for columns
@@ -91,7 +91,7 @@ Specifying a column without a class size will make sure that it keeps it's width
 <div class="span3">&nbsp;</div>
 <div class="span3">&nbsp;</div>
 
-<!-- This will two columns on desktop, and four columns anytime below -->
+<!-- This will be two columns on desktop, and four columns anytime below -->
 <div class="span3 span6-lg">&nbsp;</div>
 <div class="span3 span6-lg">&nbsp;</div>
 <div class="span3 span6-lg">&nbsp;</div>
