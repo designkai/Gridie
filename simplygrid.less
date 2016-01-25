@@ -1,5 +1,13 @@
-@gutters:   		2vw;
-@create-classes:	true;
+@gutters:           2vw;
+@create-classes:    true;
+
+// Variables for creating classes
+@columns:           12;
+@rowlabel:          row;
+@collabel:          span;
+@small:             510px;
+@medium:            600px;
+@large:             768px;
 
 // Box sizing reset, allows for row padding
 * {
@@ -71,17 +79,26 @@
 	}
 }
 
-// Variables for creating styles
-@columns:   	12;
-@rowlabel:		row;
-@collabel: 		span;
-
 // Mixin for creating classes
-.create-grid(@s;@m;@l;) when (@create-classes=true) {
+.create-grid(@s:@small;@m:@medium;@l:@large;) when (@create-classes=true) {
+
+	*[class*="@{collabel}"] {
+		float: left;
+		margin: 0 @gutters @gutters 0;
+		& *[class*="@{rowlabel}"]:last-child *[class*="@{collabel}"]:last-child {
+			margin-bottom: 0;
+		}
+		& > *[class*="@{rowlabel}"]:last-child *[class*="@{collabel}"] {
+			margin-bottom: 0;
+		}
+	}
+
 	// Create loop that iterate through the columns.
 	.grid-loop (@i) when (@i > 0) {
 		.@{collabel}@{i} {
-			.col(@i,@columns);
+			width: calc(percentage((@i/@columns)) ~"-"@gutters);
+			width: unit(percentage((@i/@columns)) - 2, ~"%\9");
+			*width: unit(floor(percentage((@i/@columns)) - 2), ~"%\9 !important");
 		}
 		.grid-loop(@i - 1);
 	}
@@ -91,7 +108,9 @@
 	// Repeat loop for each breakpoint
 	.grid-loop-sm (@i) when (@i > 0) {
 		.@{collabel}@{i}-sm {
-			.col(@i,@columns);
+			width: calc(percentage((@i/@columns)) ~"-"@gutters);
+			width: unit(percentage((@i/@columns)) - 2, ~"%\9");
+			*width: unit(floor(percentage((@i/@columns)) - 2), ~"%\9 !important");
 		}
 		.grid-loop-sm(@i - 1);
 	}
@@ -101,7 +120,9 @@
 
 	.grid-loop-md (@i) when (@i > 0) {
 		.@{collabel}@{i}-md {
-			.col(@i,@columns);
+			width: calc(percentage((@i/@columns)) ~"-"@gutters);
+			width: unit(percentage((@i/@columns)) - 2, ~"%\9");
+			*width: unit(floor(percentage((@i/@columns)) - 2), ~"%\9 !important");
 		}
 		.grid-loop-md(@i - 1);
 	}
@@ -111,7 +132,9 @@
 
 	.grid-loop-lg (@i) when (@i > 0) {
 		.@{collabel}@{i}-lg {
-			.col(@i,@columns);
+			width: calc(percentage((@i/@columns)) ~"-"@gutters);
+			width: unit(percentage((@i/@columns)) - 2, ~"%\9");
+			*width: unit(floor(percentage((@i/@columns)) - 2), ~"%\9 !important");
 		}
 		.grid-loop-lg(@i - 1);
 	}
@@ -119,3 +142,5 @@
 		.grid-loop-lg(@columns);
 	}
 }
+
+.create-grid();
