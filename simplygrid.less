@@ -1,13 +1,14 @@
-@gutters:           2vw;
+@gutters:           4vh;
 @create-classes:    true;
 
 // Variables for creating classes
 @columns:           12;
 @rowclass:          row; // Sets the class used for rows
 @colclass:          span; // Sets the class used for columns
-@small:             510px;
-@medium:            600px;
-@large:             768px;
+@small:             568px;
+@medium:            768px;
+@large:             1024px;
+@xlarge:			1280px;
 
 // Box sizing reset, allows for row padding
 * {
@@ -69,7 +70,7 @@
 }
 
 // Mixin for creating classes
-.create-grid(@s:@small;@m:@medium;@l:@large;) when (@create-classes=true) {
+.create-grid(@s:@small;@m:@medium;@l:@large;@x:@xlarge;) when (@create-classes=true) {
 
 	*[class*="@{colclass}"] {
 		float: left;
@@ -128,6 +129,18 @@
 	}
 	@media (min-width: @l) {
 		.grid-loop-lg(@columns);
+	}
+
+	.grid-loop-xl (@i) when (@i > 0) {
+		.@{colclass}@{i}-xl {
+			width: calc(percentage((@i/@columns)) ~"-"@gutters);
+			width: unit(percentage((@i/@columns)) - 2, ~"%\9");
+			*width: unit(floor(percentage((@i/@columns)) - 2), ~"%\9 !important");
+		}
+		.grid-loop-xl(@i - 1);
+	}
+	@media (min-width: @x) {
+		.grid-loop-xl(@columns);
 	}
 }
 

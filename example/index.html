@@ -6,14 +6,185 @@
 	<link href="css/example.css" media="screen" rel="stylesheet">
 </head>
 <body>
+	<h2>Mixin</h2>
+	<!--<pre><code>
+&lt;div class="row"&gt;
+	&lt;div class="span6"&gt;
+		&lt;pre&gt;6/12&lt;/pre&gt;
+	&lt;/div&gt;
+	&lt;div class="span6"&gt;
+		&lt;pre&gt;6/12&lt;/pre&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+	</code></pre>-->
 	<div class="row">
-		<div class="span7">
-			<pre>.span7</pre>
+		<div class="mixin3">
+			<pre>.col(1,3);</pre>
 		</div>
-		<div class="span5">
-			<pre>.span5</pre>
+		<div class="mixin3">
+			<pre>.col(1,3);</pre>
+		</div>
+		<div class="mixin3">
+			<pre>.col(1,3);</pre>
 		</div>
 	</div>
+	<h3>With 720 breakpoint</h3>
+	<div class="row">
+		<div class="mixin4">
+			<pre>.col(1,4,720px);</pre>
+		</div>
+		<div class="mixin4">
+			<pre>.col(1,4,720px);</pre>
+		</div>
+		<div class="mixin4">
+			<pre>.col(1,4,720px);</pre>
+		</div>
+		<div class="mixin4">
+			<pre>.col(1,4,720px);</pre>
+		</div>
+	</div>
+
+	<h2>Classes</h2>
+	<div class="row">
+		<div class="span12">
+			<pre>12/12</pre>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span1">
+			<pre>1/12</pre>
+		</div>
+		<div class="span11">
+			<pre>11/12</pre>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span2">
+			<pre>2/12</pre>
+		</div>
+		<div class="span10">
+			<pre>10/12</pre>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span3">
+			<pre>3/12</pre>
+		</div>
+		<div class="span9">
+			<pre>9/12</pre>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span4">
+			<pre>4/12</pre>
+		</div>
+		<div class="span8">
+			<pre>8/12</pre>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span5">
+			<pre>5/12</pre>
+		</div>
+		<div class="span7">
+			<pre>7/12</pre>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span6">
+			<pre>6/12</pre>
+		</div>
+		<div class="span6">
+			<pre>6/12</pre>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="span12">
+			&nbsp;
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="span6-sm">
+			<pre>6/12-sm</pre>
+		</div>
+		<div class="span6-sm">
+			<pre>6/12-sm</pre>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span6-md">
+			<pre>6/12-md</pre>
+		</div>
+		<div class="span6-md">
+			<pre>6/12-md</pre>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span6-lg">
+			<pre>6/12-lg</pre>
+		</div>
+		<div class="span6-lg">
+			<pre>6/12-lg</pre>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span6-xl">
+			<pre>6/12-xl</pre>
+		</div>
+		<div class="span6-xl">
+			<pre>6/12-xl</pre>
+		</div>
+	</div>
+
+	<h3>Multiple breakpoints</h3>
+
+	<div class="row">
+		<div class="span12-sm span6-md span4-lg span1-xl">
+			<pre class="multi-break"></pre>
+		</div>
+		<div class="span12-sm span6-md span4-lg span1-xl">
+			<pre class="multi-break"></pre>
+		</div>
+		<div class="span12-sm span6-md span4-lg span1-xl">
+			<pre class="multi-break"></pre>
+		</div>
+		<div class="span12-sm span6-md span4-lg span1-xl">
+			<pre class="multi-break"></pre>
+		</div>
+		<div class="span12-sm span6-md span4-lg span1-xl">
+			<pre class="multi-break"></pre>
+		</div>
+		<div class="span12-sm span6-md span4-lg span1-xl">
+			<pre class="multi-break"></pre>
+		</div>
+		<div class="span12-sm span6-md span4-lg span1-xl">
+			<pre class="multi-break"></pre>
+		</div>
+		<div class="span12-sm span6-md span4-lg span1-xl">
+			<pre class="multi-break"></pre>
+		</div>
+		<div class="span12-sm span6-md span4-lg span1-xl">
+			<pre class="multi-break"></pre>
+		</div>
+		<div class="span12-sm span6-md span4-lg span1-xl">
+			<pre class="multi-break"></pre>
+		</div>
+		<div class="span12-sm span6-md span4-lg span1-xl">
+			<pre class="multi-break"></pre>
+		</div>
+		<div class="span12-sm span6-md span4-lg span1-xl">
+			<pre class="multi-break"></pre>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="span12">
+			&nbsp;
+		</div>
+	</div>
+
 	<div class="row">
 		<div class="span8">
 			<div class="row">
