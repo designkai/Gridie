@@ -2,7 +2,7 @@
 
 body {
 	margin: 0;
-	padding: @gutters;
+	padding: @grid-gutters;
 }
 
 pre {
@@ -26,13 +26,13 @@ pre {
 
 .multi-break:before {
 	content: "12/12-sm";
-	@media (min-width: @md) {
+	@media (min-width: 768px) {
 		content: "6/12-md";
 	}
-	@media (min-width: @lg) {
+	@media (min-width: 1024px) {
 		content: "4/12-lg";
 	}
-	@media (min-width: @xl) {
+	@media (min-width: 1280) {
 		content: "1/12-xl";
 	}
 }
