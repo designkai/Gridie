@@ -4,3 +4,4 @@ config.codekit
 # Other files
 *.DS_Store
 README.html
+.sass-cache/
