@@ -326,6 +326,8 @@
     *width: 98%\9 !important;
   }
 }
+/** for loop by Max Mikhailov
+    https://github.com/seven-phases-max/less.curious **/
 body {
   margin: 0;
   padding: 2vw;
