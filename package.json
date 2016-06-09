@@ -1,7 +1,7 @@
 {
-  "name": "Gulplie",
+  "name": "SimplyGrid",
   "version": "0.0.1",
-  "description": "Front end Gulp boilerplate",
+  "description": "Super lightweight CSS grid",
   "author": {
     "name": "Domenico Perri",
     "url": "http://dperri.com"
@@ -9,7 +9,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/designkai/Gulpie.git"
+    "url": "https://github.com/designkai/SimplyGrid.git"
   },
   "devDependencies": {
     "browser-sync": "^2.13.0",
