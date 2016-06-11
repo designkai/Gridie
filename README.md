@@ -14,14 +14,14 @@ Using `.col(x,y,breakpoint);` allows you to define grid widths inside specific e
 </div>
 ```
 
-```css
+```less
 #main-content {
-	.col(3,5);
 	// This calculates to 3/5 = 60%
+	.col(3,5);
 }
 #side-bar {
-	.col(2,5);
 	// This calculates to 2/5 = 40%
+	.col(2,5);
 }
 ```
 
