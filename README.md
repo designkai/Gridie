@@ -1,20 +1,11 @@
 # SimplyGrid
-Super lightweight LESS grid built with calc(), with fallback to IE7+.
+Super lightweight grid built with calc(), with fallback to IE7+. The examples below are written in LESS, but there is also an SCSS file with the same methods.
 
 ## Using the mixin
 
-By using a mixin .col can be called inside specific elements, making the grid flexible beyond the pre-defined classes. For example, to create a basic layout you might use it inside an ID.
+SimplyGrid has been designed in a way that removes the need for a whole bloated grid system, instead allowing you to build grid features into classes as they need them.
 
-```css
-#main-content {
-	.col(3,5);
-}
-#side-bar {
-	.col(2,5);
-}
-```
-
-This allows you to not use column classes in your HTML.
+Using `.col(x,y,breakpoint);` allows you to define grid widths inside specific elements, making the grid flexible beyond the pre-defined classes. For example, to create a basic layout you might simply add grid functionality to IDs.
 
 ```html
 <div class="row">
@@ -23,16 +14,27 @@ This allows you to not use column classes in your HTML.
 </div>
 ```
 
+```css
+#main-content {
+	.col(3,5);
+	// This calculates to 3/5 = 60%
+}
+#side-bar {
+	.col(2,5);
+	// This calculates to 2/5 = 40%
+}
+```
+
 This method also allows you to attach grid values directly to elements, without having to create columns. Take the following image list.
 
 ```html
 <div class="row img-list">
-	<img src="cool-image.jpg" style="width:100%;">
-	<img src="cool-image.jpg" style="width:100%;">
-	<img src="cool-image.jpg" style="width:100%;">
-	<img src="cool-image.jpg" style="width:100%;">
-	<img src="cool-image.jpg" style="width:100%;">
-	<img src="cool-image.jpg" style="width:100%;">
+	<img src="image.jpg">
+	<img src="image.jpg">
+	<img src="image.jpg">
+	<img src="image.jpg">
+	<img src="image.jpg">
+	<img src="image.jpg">
 </div>
 ```
 
@@ -41,55 +43,77 @@ Using the mixin, we could turn these 6 images into 6 columns.
 ```less
 .img-list {
 	img {
-		.col(1,3);
+		width: 100%;
+		.col(1,6);
 	}
 }
 ```
 
-The mixin can also be expanded on to define the breakpoints of an element. For example, if we wanted those 6 images to break into 6 rows at 740px we can add it at the end.
+### Mixin breakpoints
+
+The mixin can also be used to define the breakpoints of an element. For example, we could make those 6 columns break into 3 columns at 740px, then 2 columns at 520px.
 
 ```less
 .img-list {
 	img {
-		.col(1,3,740px);
+		.col(3,6,520px);
+		.col(1,6,740px);
 	}
 }
 ```
 
 ## Creating a grid stylesheet
 
-If you'd like to create a stylesheet like normal that uses classes, this can be included by changing `@create-classes` to `true`.
+SimplyGrid can also be used to create a regular grid syste, defined with classes of your choosing.
 
-This will output the styles for a grid based on the variables at the top of the doc.
+To add or remove the grid stylesheet functionality, redifine `@create-classes` as `true` or `false`. This can be done after import into another less file.
 
+At the top of the SimplyGrid code are some basic setting.
+
+```less
+// Grid settings
+@create-classes:    true; // Change to true to build grid
+@grid-gutters:      2vmax; // Sets the space between rows and columns
+@grid-columns:      12; // Sets the number of columns
+@grid-rowclass:     row; // Sets the class name used for rows
+@grid-colclass:     col; // Sets the class name used for columns
 ```
-@columns: 12;
-@rowclass: row; // Sets the class used for rows
-@colclass: span; // Sets the class used for columns
-@small: 510px;
-@medium: 600px;
-@large: 768px;
+
+These allow you to define your gutter width and column count, as well as rename your row and column classes. This is useful, particularly in systems where the class name may conflict with other grids.
+
+Beneath the settings is an array of breakpoints, and their names.
+
+```less
+// Create a column sepparated array of all your breakpoints
+// in the format of 'name [width]px'
+@breakpoints:
+	sm 568px,
+	md 768px,
+	lg 1024px,
+	xl 1280px;
 ```
 
-These classes can then be used as expected. The code below will produce six columns that breaks into three columns, then two columns, and finally one column.
+There is no limit to how many or few breakpoints can be defined in this array. These breakpoints will all then be compiled into the grid as useable classes.
+
+The format of the classes is defines as `.[grid-colclass][number]-[breakpoint]` The code below will produce six columns that breaks into three columns, then two columns, and finally one column, based on the array above.
 
 ```html
-<div class="span6-sm span4-md span2-lg">&nbsp;</div>
-<div class="span6-sm span4-md span2-lg">&nbsp;</div>
-<div class="span6-sm span4-md span2-lg">&nbsp;</div>
-<div class="span6-sm span4-md span2-lg">&nbsp;</div>
-<div class="span6-sm span4-md span2-lg">&nbsp;</div>
-<div class="span6-sm span4-md span2-lg">&nbsp;</div>
+<div class="col12 col6-sm col4-md col2-lg">&nbsp;</div>
+<div class="col12 col6-sm col4-md col2-lg">&nbsp;</div>
+<div class="col12 col6-sm col4-md col2-lg">&nbsp;</div>
+<div class="col12 col6-sm col4-md col2-lg">&nbsp;</div>
+<div class="col12 col6-sm col4-md col2-lg">&nbsp;</div>
+<div class="col12 col6-sm col4-md col2-lg">&nbsp;</div>
 ```
 
 Specifying a column without a class size will make sure that it keeps it's width at any size, unless specified by another class.
 
 ```html
 <!-- This will always be four columns -->
-<div class="span3">&nbsp;</div>
-<div class="span3">&nbsp;</div>
-<div class="span3">&nbsp;</div>
-<div class="span3">&nbsp;</div>
+<div class="col3">&nbsp;</div>
+<div class="col3">&nbsp;</div>
+<div class="col3">&nbsp;</div>
+<div class="col3">&nbsp;</div>
 
 <!-- This will be two columns on desktop, and four columns anytime below -->
 <div class="span3 span6-lg">&nbsp;</div>
