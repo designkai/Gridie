@@ -7,11 +7,12 @@ $grid-colclass:     col; // Sets the class name used for columns
 
 // Create a column sepparated array of all your breakpoints
 // in the format of 'name [width]px'
-$breakpoints:
-	sm 568px,
-	md 768px,
-	lg 1024px,
-	xl 1280px;
+$breakpoints: (
+	sm: 568px,
+	md: 768px,
+	lg: 1024px,
+	xl: 1280px,
+);
 
 // Functional variable to count the number of breakpoints
 $length: length($breakpoints);
@@ -33,6 +34,8 @@ $length: length($breakpoints);
 	margin-right: -$grid-gutters;
 	&.noafter,
 	&.noafter *[class*="#{$grid-colclass}"] {
+		// This is a helper class added to rows to remove
+		// their bottom margin
 		margin-bottom: 0;
 	}
 }
