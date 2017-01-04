@@ -31,6 +31,10 @@ $length: length($breakpoints);
 	// value is in modern units.
 	margin-bottom: 2%\9 !important;
 	margin-right: -$grid-gutters;
+	&.noafter,
+	&.noafter *[class*="#{$grid-colclass}"] {
+		margin-bottom: 0;
+	}
 }
 
 // Create a ruleset out of the grid values so they can
