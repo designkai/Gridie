@@ -1,9 +1,9 @@
 // Grid settings
-$create-classes:    true; // Change to true to build grid
-$grid-gutters:      2vmax; // Sets the space between rows and columns
-$grid-columns:      12; // Sets the number of columns
-$grid-rowclass:     row; // Sets the class name used for rows
-$grid-colclass:     col; // Sets the class name used for columns
+$create-classes:    true !default; // Change to true to build grid
+$grid-gutters:      2vmax !default; // Sets the space between rows and columns
+$grid-columns:      12 !default; // Sets the number of columns
+$grid-rowclass:     row !default; // Sets the class name used for rows
+$grid-colclass:     col !default; // Sets the class name used for columns
 
 // Create a column sepparated array of all your breakpoints
 // in the format of 'name [width]px'
@@ -12,7 +12,7 @@ $breakpoints: (
 	md: 768px,
 	lg: 1024px,
 	xl: 1280px,
-);
+) !default;
 
 // Functional variable to count the number of breakpoints
 $length: length($breakpoints);
