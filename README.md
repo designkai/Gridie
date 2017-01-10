@@ -1,9 +1,9 @@
-# SimplyGrid
+# Gridie
 Super lightweight grid built with calc(), with fallback to IE7+. The examples below are written in LESS, but there is also an SCSS file with the same methods.
 
 ## Using the mixin
 
-SimplyGrid has been designed in a way that removes the need for a whole bloated grid system, instead allowing you to build grid features into classes as they need them.
+Gridie has been designed in a way that removes the need for a whole bloated grid system, instead allowing you to build grid features into classes as they need them.
 
 Using `.col(x,y,breakpoint);` allows you to define grid widths inside specific elements, making the grid flexible beyond the pre-defined classes. For example, to create a basic layout you might simply add grid functionality to IDs.
 
@@ -64,11 +64,11 @@ The mixin can also be used to define the breakpoints of an element. For example,
 
 ## Creating a grid stylesheet
 
-SimplyGrid can also be used to create a regular grid syste, defined with classes of your choosing.
+Gridie can also be used to create a regular grid syste, defined with classes of your choosing.
 
 To add or remove the grid stylesheet functionality, redifine `@create-classes` as `true` or `false`. This can be done after import into another less file.
 
-At the top of the SimplyGrid code are some basic setting.
+At the top of the Gridie code are some basic setting.
 
 ```less
 // Grid settings

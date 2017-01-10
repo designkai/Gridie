@@ -1,5 +1,5 @@
 {
-  "name": "SimplyGrid",
+  "name": "Gridie",
   "version": "1.0.1",
   "description": "Super lightweight CSS grid",
   "author": {
@@ -9,7 +9,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/designkai/SimplyGrid.git"
+    "url": "https://github.com/designkai/Gridie.git"
   },
   "devDependencies": {
     "browser-sync": "^2.13.0",
