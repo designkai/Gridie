@@ -1,0 +1,136 @@
+// Grid settings
+$create-classes:    true !default; // Change to true to build grid
+$grid-gutters:      2vmax !default; // Sets the space between rows and columns
+$grid-columns:      12 !default; // Sets the number of columns
+$grid-rowclass:     row !default; // Sets the class name used for rows
+$grid-colclass:     col !default; // Sets the class name used for columns
+
+// Create a column sepparated array of all your breakpoints
+// in the format of 'name [width]px'
+$breakpoints: (
+	sm: 568px,
+	md: 768px,
+	lg: 1024px,
+	xl: 1280px,
+) !default;
+
+// Functional variable to count the number of breakpoints
+$length: length($breakpoints);
+
+// Box sizing reset, allows for row padding
+* {
+	box-sizing: border-box;
+}
+
+// Create row styles
+.#{$grid-rowclass} {
+	margin: 0;
+	clear: both;
+	padding: 0;
+	overflow: hidden;
+	// Create IE7&8 gutters. Only needed if gutter
+	// value is in modern units.
+	margin-bottom: 2%\9 !important;
+	margin-right: -$grid-gutters;
+	&.noafter,
+	&.noafter *[class*="#{$grid-colclass}"] {
+		// This is a helper class added to rows to remove
+		// their bottom margin
+		margin-bottom: 0;
+	}
+}
+
+// Create a ruleset out of the grid values so they can
+// be easily re-used and maintained.
+@mixin grid-ruleset($x,$y) {
+	$perc: percentage($x / $y);
+	// Create calc grid for modern browsers.
+	width: calc(#{$perc} - #{$grid-gutters});
+
+	// Create IE8- fallback. Due to lack of calc() support
+	// grid-columns use an extra 2% as a gutter.
+	// Remove this if only supporting IE9+.
+	width: #{$perc}\9;
+	// Create IE7 fallback. IE7 has a hard time with
+	// decimal places in percentages.
+	// Remove this if only supporting IE9+.
+	$math: $perc - 2%;
+	$floor: floor($math);
+	*width: #{$floor}\9 !important;
+	margin-right: 2%\9 !important;
+}
+
+// Create mixin.
+// Mixin allows you to make any element a fraction width,
+// for example .col(3/5); will make an element width 60%.
+@mixin col($x,$y,$z:0) {
+	float: left;
+	margin: 0 $grid-gutters $grid-gutters 0;
+	// Remove bottom margin from the last span in the last
+	// nested row, to keep vertical spacing consistent.
+	& *[class*="#{$grid-rowclass}"]:last-child *[class*="#{$grid-colclass}"]:last-child,
+	& > *[class*="#{$grid-rowclass}"]:last-child *[class*="#{$grid-colclass}"] {
+		margin-bottom: 0;
+	}
+	// When the breakpoint is undefined, simply add the
+	// ruleset without a media query.
+	@if $z == 0 {
+		@include grid-ruleset($x,$y);
+	}
+	// If the breakpoint is defined, add the ruleset inside
+	// a media query at that size.
+	@if $z > 0 {
+		width: calc(100 - #{$grid-gutters});
+		@media (min-width: $z){
+			@include grid-ruleset($x,$y);
+		}
+	}
+}
+
+// Mixin for creating classes
+@mixin create-grid() {
+	*[class*="#{$grid-colclass}"] {
+		float: left;
+		margin: 0 $grid-gutters $grid-gutters 0;
+		width: calc(100% - #{$grid-gutters});
+		& *[class*="#{$grid-rowclass}"]:last-child *[class*="#{$grid-colclass}"]:last-child,
+		& > *[class*="#{$grid-rowclass}"]:last-child *[class*="#{$grid-colclass}"] {
+			margin-bottom: 0;
+		}
+	}
+
+	// Create loop that iterate through the columns
+	// without a breakpoint
+	$i: $grid-columns;
+	@while $grid-columns > 0 {
+		.#{$grid-colclass}#{$grid-columns} {
+			$perc: percentage($grid-columns / $i);
+			$math: $perc - 2%;
+			$floor: floor($math);
+			width: calc(#{$perc} - #{$grid-gutters});
+			width: #{$math}\9;
+			*width: #{$floor}\9 !important;
+		}
+		$grid-columns: $grid-columns - 1;
+	}
+
+	@for $i from 1 through $length {
+		$x:          nth($breakpoints,$i);
+		$breakname:  nth($x, 1);
+
+    	@media (min-width: nth($x, 2)) {
+    		// Create another loop to iterate through the
+    		// columns of each breakpoint
+    		@for $j from 1 through $grid-columns {
+	            .#{$grid-colclass}#{$j}-#{$breakname} {
+					$perc: percentage($j / $grid-columns);
+					$math: $perc - 2%;
+					$floor: floor($math);
+					width: calc(#{$perc} - #{$grid-gutters});
+					width: #{$math}\9;
+					*width: #{$floor}\9 !important;
+	            }
+    		}
+    	}
+	}
+} @include create-grid();

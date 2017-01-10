@@ -1,0 +1,144 @@
+// Grid settings
+@create-classes:    true; // Change to true to build grid
+@grid-gutters:      2vmax; // Sets the space between rows and columns
+@grid-columns:      12; // Sets the number of columns
+@grid-rowclass:     row; // Sets the class name used for rows
+@grid-colclass:     col; // Sets the class name used for columns
+
+// Create a column sepparated array of all your breakpoints
+// in the format of 'name [width]px'
+@breakpoints:
+	sm 568px,
+	md 768px,
+	lg 1024px,
+	xl 1280px;
+
+// Functional variable to count the number of breakpoints
+@length: length(@breakpoints);
+
+// Box sizing reset, allows for row padding
+* {
+	box-sizing: border-box;
+}
+
+// Create row styles
+.@{grid-rowclass} {
+	margin: 0;
+	clear: both;
+	padding: 0;
+	overflow: hidden;
+	// Create IE7&8 gutters. Only needed if gutter
+	// value is in modern units.
+	margin-bottom: 2%\9 !important;
+	margin-right: -@grid-gutters;
+	&.noafter,
+	&.noafter *[class*="#{@grid-colclass}"] {
+		// This is a helper class added to rows to remove
+		// their bottom margin
+		margin-bottom: 0;
+	}
+}
+
+// Create mixin.
+// Mixin allows you to make any element a fraction width,
+// for example .col(3/5); will make an element width 60%.
+.col(@x;@y;@z:0;) {
+	float: left;
+	margin: 0 @grid-gutters @grid-gutters 0;
+	// Remove bottom margin from the last span in the last
+	// nested row, to keep vertical spacing consistent.
+	& *[class*="@{grid-rowclass}"]:last-child *[class*="@{grid-colclass}"]:last-child,
+	& > *[class*="@{grid-rowclass}"]:last-child *[class*="@{grid-colclass}"] {
+		margin-bottom: 0;
+	}
+	// Create a ruleset out of the grid values so they can
+	// be easily re-used and maintained.
+	@grid-ruleset: {
+		// Create calc grid for modern browsers.
+		width: calc(percentage((@x/@y)) ~"-"@grid-gutters);
+
+		// Create IE8- fallback. Due to lack of calc() support
+		// grid-columns use an extra 2% as a gutter.
+		// Remove this if only supporting IE9+.
+		width: unit(percentage((@x/@y)) - 2, ~"%\9");
+		// Create IE7 fallback. IE7 has a hard time with
+		// decimal places in percentages.
+		// Remove this if only supporting IE9+.
+		*width: unit(floor(percentage((@x/@y)) - 2), ~"%\9 !important");
+		margin-right: 2%\9 !important;
+	};
+	// When the breakpoint is undefined, simply add the
+	// ruleset without a media query.
+	& when (@z = 0) {
+		@grid-ruleset();
+	}
+	// If the breakpoint is defined, add the ruleset inside
+	// a media query at that size.
+	& when (@z > 0) {
+		width: calc(100% ~"-"@grid-gutters);
+		@media (min-width: @z){
+			@grid-ruleset();
+		}
+	}
+}
+
+// Mixin for creating classes
+.create-grid() when (@create-classes=true) {
+	*[class*="@{grid-colclass}"] {
+		float: left;
+		margin: 0 @grid-gutters @grid-gutters 0;
+		width: calc(100% ~"-"@grid-gutters);
+		& *[class*="@{grid-rowclass}"]:last-child *[class*="@{grid-colclass}"]:last-child,
+		& > *[class*="@{grid-rowclass}"]:last-child *[class*="@{grid-colclass}"] {
+			margin-bottom: 0;
+		}
+	}
+
+	// Create loop that iterate through the columns
+	// without a breakpoint
+	.grid-loop (@i) when (@i > 0) {
+		.@{grid-colclass}@{i} {
+			width: calc(percentage((@i/@grid-columns)) ~"-"@grid-gutters);
+			width: unit(percentage((@i/@grid-columns)) - 2, ~"%\9");
+			*width: unit(floor(percentage((@i/@grid-columns)) - 2), ~"%\9 !important");
+		}
+		.grid-loop(@i - 1);
+	} .grid-loop(@grid-columns);
+
+	// For each of the breakpoints, create a media query
+	.for(@length); .-each(@i) {
+		@x:          extract(@breakpoints,@i);
+		@breakname:  extract(@x, 1);
+
+    	@media (min-width: extract(@x, 2)) {
+    		// Create another loop to iterate through the
+    		// columns of each breakpoint
+    		.for(@grid-columns); .-each(@j) {
+	            .@{grid-colclass}@{j}-@{breakname} {
+	                width: calc(percentage((@j/@grid-columns)) ~"-"@grid-gutters);
+	                width: unit(percentage((@j/@grid-columns)) - 2, ~"%\9");
+	                *width: unit(floor(percentage((@j/@grid-columns)) - 2), ~"%\9 !important");
+	            }
+	        }
+    	}
+	}
+} .create-grid();
+
+/** for loop by Max Mikhailov
+    https://github.com/seven-phases-max/less.curious **/
+
+// ............................................................
+// .for
+
+.for(@i, @n) {.-each(@i)}
+.for(@n)     when (isnumber(@n)) {.for(1, @n)}
+.for(@i, @n) when not (@i = @n)  {
+    .for((@i + (@n - @i) / abs(@n - @i)), @n);
+}
+
+// ............................................................
+// .for-each
+
+.for(@array)   when (default()) {.for-impl_(length(@array))}
+.for-impl_(@i) when (@i > 1)    {.for-impl_((@i - 1))}
+.for-impl_(@i) when (@i > 0)    {.-each(extract(@array, @i))}
